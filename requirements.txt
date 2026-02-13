@@ -1,0 +1,15 @@
+# Core framework
+fastapi==0.109.0
+uvicorn[standard]==0.27.0
+
+# HTTP client (lighter than requests for async)
+httpx==0.26.0
+
+# Data validation
+pydantic==2.5.3
+
+# Memory monitoring (optional, for /cleanup endpoint)
+psutil==5.9.8
+
+# Production server
+gunicorn==21.2.0

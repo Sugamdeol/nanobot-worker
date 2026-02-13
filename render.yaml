@@ -1,0 +1,22 @@
+# Render deployment configuration
+# Free tier: 512MB RAM, 0.1 CPU
+
+services:
+  - type: web
+    name: nanobot-worker
+    runtime: docker
+    plan: free
+    healthCheckPath: /health
+    envVars:
+      - key: GEMINI_API_KEY
+        sync: false  # Set in Render dashboard
+      - key: ELEVENLABS_API_KEY
+        sync: false  # Set in Render dashboard
+      - key: SCREENSHOTONE_KEY
+        sync: false  # Optional: for screenshot API
+      - key: PYTHONUNBUFFERED
+        value: "1"
+      - key: MALLOC_ARENA_MAX
+        value: "2"
+      - key: MALLOC_TRIM_THRESHOLD_
+        value: "0"
