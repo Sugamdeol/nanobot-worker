@@ -1,0 +1,13 @@
+services:
+  - type: web
+    name: nanobot-worker
+    runtime: docker
+    plan: standard
+    envVars:
+      - key: GEMINI_API_KEY
+        sync: false
+      - key: POLLINATIONS_API_KEY
+        sync: false
+      - key: PYTHONUNBUFFERED
+        value: "1"
+    healthCheckPath: /health
